@@ -90,6 +90,7 @@ h5 {
     flex-wrap: wrap;
     flex-direction: row;
     gap: 20px;
+    align-items: center;
 }
 
 .container-from-3 .checkbox-group label {
@@ -180,11 +181,20 @@ h5 {
     gap: 10px;
 }
 
+.container-from-5 .checkbox-group label,
+.container-from-5 .checkbox-group-1 label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
 .container-from-5 input[type="checkbox"] {
     margin: 0;
     width: 18px;
     height: 18px;
     accent-color: #a259ff;
+
 }
 
 .container-from-6 {

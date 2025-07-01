@@ -188,3 +188,9 @@ th {
         -webkit-overflow-scrolling: touch;
     }
 }
+
+@media (max-width: 450px) {
+    .container-2 h2 {
+        font-size: 15px;
+    }
+}
