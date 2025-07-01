@@ -1,0 +1,190 @@
+@font-face {
+    font-family: 'Noto Sans Lao';
+    src: url('../font/NOTOSANSLAO-EXTRABOLD.TTF') format('truetype');
+
+}
+
+.container-2 {
+    font-family: 'Noto Sans Lao';
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.container-2-from-1,
+.container-2-from-2,
+.container-2-from-4 {
+    font-family: 'Noto Sans Lao';
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.container-2-from-1 .label-text-from4 {
+    color: black;
+}
+
+.container-2-from-1 label,
+.container-2-from-2 label,
+.container-2-from-4 label {
+    display: flex;
+    color: red;
+    gap: 20px 80px;
+}
+
+
+.container-2-from-1 option,
+.container-2-from-2 option,
+.container-2-from-4 option {
+    font-family: 'Noto Sans Lao';
+    font-size: 1rem;
+    color: #333;
+}
+
+.container-2-from-1 input,
+.container-2-from-1 select,
+.container-2-from-2 input,
+.container-2-from-4 input {
+    font-family: 'Noto Sans Lao';
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+
+}
+
+.container-2-from-2 .label-1 {
+    margin-right: 32px;
+}
+
+.container-2-from-3 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px 35px;
+}
+
+.container-2-from-3 input {
+    width: 823px;
+    padding: 0.8rem;
+    border-radius: 0.4rem;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    min-width: 200px;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.container-2-from-1 input:focus,
+.container-2-from-2 input:focus,
+.container-2-from-3 input:focus,
+.container-2-from-4 input:focus {
+    outline: none;
+    border-color: #4d90fe;
+    box-shadow: 0 0 5px rgba(77, 144, 254, 0.5);
+}
+
+.container-2-from-4 .label-text-from4-4 {
+    color: black;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.container-2-from-1 .label-text-from5 {
+    color: #000;
+    margin-right: 50px;
+}
+
+.container-2-from-1 .label-text-from5-5 {
+    color: #000;
+}
+
+.container-2-from-3 .label-text-from6 {
+    margin-right: 60px;
+}
+
+.container-2-from-4 .label-text-from4-4-4 {
+    color: black;
+    font-size: 20px;
+    margin-right: 98px;
+}
+
+.container-2-from-4 .label-text-from4-4-4 input {
+    width: 823px;
+    padding: 0.8rem;
+    border-radius: 0.4rem;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    min-width: 200px;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.container-2-from-table label {
+    color: black;
+    font-size: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #aaa;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #eee;
+}
+
+@media (max-width: 768px) {
+    .container-2 {
+        padding: 1.5rem 1rem;
+    }
+
+    .container-2-from-1,
+    .container-2-from-2,
+    .container-2-from-3,
+    .container-2-from-4 {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .container-2-from-1 label,
+    .container-2-from-2 label,
+    .container-2-from-3 label,
+    .container-2-from-4 label {
+        margin: 0;
+        gap: 10px;
+        margin-bottom: 0.25rem;
+    }
+
+    .container-2-from-1 input,
+    .container-2-from-1 select,
+    .container-2-from-2 input,
+    .container-2-from-3 input,
+    .container-2-from-4 input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .container-2-from-table {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}

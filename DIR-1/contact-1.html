@@ -1,0 +1,86 @@
+<div class="container-1">
+    <div href="#contact-1" class="clickable" onclick="loadPage('../DIR-1/contact-1.html'); return false;">ຂໍ້ I</div>
+    <div href="#contact-2" class="clickable" onclick="loadPage('../DIR-1/contact-2.html'); return false;">ຂໍ້ II. 1-5
+    </div>
+    <div href="#contact-3" class="clickable" onclick="loadPage('../DIR-1/contact-3.html'); return false;">ຂໍ້ III.</div>
+    <div href="#contact-4" class="clickable" onclick="loadPage('../DIR-1/contact-4.html'); return false;">ຂໍ້ IV-V</div>
+</div>
+
+<div class="container-from" id=" main-contact-1">
+    <div>
+        <p><b>I. ຂໍ້ມູນລວມ:</p>
+    </div>
+
+    <div class="container-from-1">
+        <label for="research-title">ຊື່ ຫົວຂໍ້ຄົ້ນຄວ້າ:</label>
+        <input type="text">
+    </div>
+
+    <div class="container-from-2">
+        <label for="research-title">ໄລຍະຈັດຕັ້ງປະຕິບັດ (ຈຳນວນເດືອນ):</label>
+        <input type="number" min="1" max="12">
+
+        <label class="label-color" for="research-title">ແຕ່ເດືອນ / ປີ:</label>
+        <input type="date">
+
+        <label class="label-color" for="research-title">ຫາ ເດືອນ / ປີ:</label>
+        <input type="date">
+    </div>
+
+    <div class="container-from-3">
+        <label>ຂົງເຂດ</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" value="ວິທະຍາສາດທຳມະຊາດ ແລະ ເຕັກນິກ"> ວິທະຍາສາດທຳມະຊາດ ແລະ ເຕັກນິກ</label>
+            <label><input type="checkbox">ວິທະຍາສາດສັງຄົມ ແລະ ມະນູດສາດ</label>
+        </div>
+    </div>
+
+    <div class="container-from-4">
+        <label for="science-field">ຂົງເຂດວິທະຍາສາດ</label>
+        <select id="science-field" name="science-field">
+            <option value="">-- ເລືອກຂົງເຂດ --</option>
+            <option value="ຄະນິດສາດ">ຄະນິດສາດ</option>
+            <option value="ຟີຊິກສ໌">ຟີຊິກສ໌</option>
+            <option value="ເຄມີ">ເຄມີ</option>
+            <option value="ຊີວະວິທະຍາ">ຊີວະວິທະຍາ</option>
+            <option value="ວິສະວະກຳ">ວິສະວະກຳ</option>
+            <option value="ສາຂາອື່ນໆ">ສາຂາອື່ນໆ</option>
+        </select>
+        <label>ລະຫັດປະເພດ</label>
+        <input type="text">
+    </div>
+    <div class="container-from-5">
+
+        <div class="checkbox-group">
+            <label><input type="checkbox" value="ຫົວຂໍ້ໃຫມ່"> ຫົວຂໍ້ໃຫມ່</label>
+            <label><input type="checkbox">ຫົວຂໍ້ສືບຕໍ່</label>
+        </div>
+
+        <div class="checkbox-group-1">
+            <label><input type="checkbox" value="ຫົວຂໍ້ໃຫມ່"> ຫົວຂໍ້ໃຫມ່</label>
+            <label><input type="checkbox">ຫົວຂໍ້ສືບຕໍ່</label>
+        </div>
+    </div>
+
+    <div class="container-from-6">
+        <label for="research-title">ຊື່ ຫົວຂໍ້ຄົ້ນຄວ້າ:</label>
+        <input type="text">
+        <button>Browse</button>
+    </div>
+
+    <div class="container-from-7">
+        <div class="form-row">
+            <label for="leader-name">ຊື່ ຂອງຫົວໜ້າທີ່ຄົ້ນຄວ້າ</label>
+            <input type="text" id="leader-name">
+        </div>
+        <div class="form-row">
+            <label for="project-count">ຈຳນວນຫົົວຂໍ້ທີ່ຕົນເປັນຫົວໜ້າຄົ້ນຄວ້າທີ່ກອງທືນໃຫ້ສະນັບສະໜຸນ:</label>
+            <input type="text" id="project-count">
+        </div>
+        <div class="form-row">
+            <label for="other-fund">ຊື່ແຫຼ່ງທືນອື່ນທີ່ນຳສະເໜີນຳໃຊ້ເພື່ອຄົ້ນຄວ້າ (ຖ້າມີ , ລະບຸຊື່)</label>
+            <input type="text" id="other-fund">
+        </div>
+    </div>
+
+    <script src="../style/js/Function-new.js"></script>

@@ -1,0 +1,26 @@
+.error {
+    width: 100%;
+    max-width: 420px;
+    min-height: 220px;
+    margin: 60px auto;
+    padding: 2rem 1.5rem;
+    background: #fff3cd;
+    border: 1.5px solid #ffeeba;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
+    text-align: center;
+    font-family: 'Noto Sans Lao', sans-serif;
+    color: #856404;
+}
+
+.error h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #d9534f;
+    letter-spacing: 1px;
+}
+
+.error p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}

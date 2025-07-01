@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Noto Sans Lao';
+    src: url('../font/NOTOSANSLAO-EXTRABOLD.TTF') format('truetype');
+
+}
+
+.container-1 {
+    font-family: 'Noto Sans Lao';
+    margin: 0 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.container-1 div {
+    background-color: #e7e7e7;
+    width: 100px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.container-1 div:hover {
+    background-color: #f0f0f0;
+}
+
+.clickable {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    transition: background 0.2s;
+}
+
+.clickable:hover {
+    background: #f0e6ff;
+}
+
+.container-one {
+    display: none;
+}
