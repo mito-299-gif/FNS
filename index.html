@@ -4,15 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./style/img/logo.png" type="image/x-icon">
-    <title>LA-FNS</title>
+    <link rel="shortcut icon" href="./style/img/logo.ico" type="image/x-icon">
+    <title>ແຈ້ງການສະໝັກທຶນ</title>
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 
 <body>
     <nav class="navbar">
-        <a class="navbar-brand" onclick="loadPage('../DIR-error/error.html'); return false;">
+        <a class="navbar-brand" onclick="loadPage('../DIR-1/contact-1.html'); return false;">
             <img src="./style/img/logo.png" alt="Logo" class="navbar-logo">
-            <span>FNS</span>
+            <!-- <span>FNS</span> -->
         </a>
         <button class="navbar-toggler" type="button" aria-label="Toggle navigation" aria-expanded="false"
             aria-controls="navbarNavContent">
@@ -24,43 +26,32 @@
         <ul class="navbar-nav" id="navbarNavContent">
             <li class="nav-item">
                 <a class="nav-link" onclick="loadPage('../DIR-error/error.html'); return false;">
-                    <img src="./style/img/ing-1.png" alt="" class="nav-icon">
-                    <span>ນັກຄົ້ນຄວ້າ</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" onclick="loadPage('../DIR-1/contact-1.html'); return false;">
-                    <img src="./style/img/ing-2.png" alt="" class="nav-icon">
-                    <span>ກວດຜ່ານຫົວຂໍ້</span> </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" onclick="loadPage('../DIR-error/error.html'); return false;">
-                    <img src="./style/img/ing-3.png" alt="" class="nav-icon">
-                    <span>ຄຸ້ມຄອງໂຄງການ</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" onclick="loadPage('../DIR-2/DIR-1.html'); return false;">
-                    <img src="./style/img/ing-4.png" alt="" class="nav-icon">
-                    <span>ໃບສັງລວມຜົນ</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" onclick="loadPage('../DIR-3/DIR-1.html'); return false;">
-                    <img src="./style/img/ing-7.png" alt="" class="nav-icon">
-                    <span>ຜົນການປະເມີນ</span>
+
+                    <span>ແຈ້ງຜົນການຄັດເລືອກ</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" onclick="loadPage('../DIR-error/error.html'); return false;">
-                    <img src="./style/img/ing-5.png" alt="" class="nav-icon">
-                    <span>ຂໍ້ມູນສະຖາບັນ</span>
-                </a>
+                    <span>ແຈ້ງສະໝັກທຶນ</span> </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" onclick="loadPage('../DIR-error/error.html'); return false;">
-                    <img src="./style/img/ing-6.png" alt="" class="nav-icon">
-                    <span>ຂໍ້ມູນຜູ້ນຳໃຊ້</span>
+                    <span>ນິຕິກຳຕ່າງໆ</span>
+                </a>
+            </li>
+
+            <!-- ຊ່ອນ -->
+            <li class="nav-item Login-Admin" id="loginNavItem">
+                <a class="nav-link">
+                    <button class="login-btn" id="loginNavButton">Login</button>
+                </a>
+            </li>
+            <!-- LOGIN ສະແດງຂື້ນມາ -->
+            <li class="nav-item Login-Admin" id="userNavItem" style="display: none;">
+                <a class="nav-link user-profile-link">
+                    <!-- <img src="./style/img/user-profile.png" alt="User" class="user-icon-nav"> -->
+                    <span id="usernameDisplay"></span>
+                    <button id="logoutButton" class="logout-btn">ອອກຈາກລະບົບ</button>
                 </a>
             </li>
         </ul>
@@ -72,15 +63,76 @@
 
     <div id="main-content"></div>
 
+    <!-- Overlay to force login -->
+    <div id="login-overlay"></div>
+
+    <!-- Modal Login -->
+    <div id="loginModal" class="modal" role="dialog" aria-labelledby="loginModalTitle" aria-modal="true">
+        <div class="modal-content">
+            <!-- The close button is controlled by JS. It's hidden when login is forced. -->
+            <button class="close" id="loginModalCloseButton" aria-label="Close">&times;</button>
+            <h3 id="loginModalTitle">ເຂົ້າສູ່ລະບົບ</h3>
+            <form id="loginForm">
+                <label for="loginUsername" class="sr-only">ຊື່ຜູ້ໃຊ້</label>
+                <input id="loginUsername" type="text" placeholder="ຊື່ຜູ້ໃຊ້, ອີເມວ, ຫຼື ເບີໂທ" required>
+                <label for="loginPassword" class="sr-only">ລະຫັດຜ່ານ</label>
+                <input id="loginPassword" type="password" placeholder="ລະຫັດຜ່ານ" required>
+                <button type="submit">ເຂົ້າສູ່ລະບົບ</button>
+                <!-- <p class="modal-separator"><span>ຫຼື</span></p> -->
+                <button type="button" class="register-btn" id="switchToRegister">ສະໝັກຊື່ຜູ້ໃຊ້</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Register -->
+    <div id="registerModal" class="modal" role="dialog" aria-labelledby="registerModalTitle" aria-modal="true">
+        <div class="modal-content">
+            <button class="close" aria-label="Close">&times;</button>
+            <!-- <h3 id="registerModalTitle">ສະໝັກຊື່ຜູ້ໃຊ້</h3> -->
+            <h3 id="registerModalTitle">ສະໝັກຊື່ຜູ້ໃຊ້</h3>
+            <form id="registerForm">
+                <label for="registerUsername" class="sr-only">ຊື່ຜູ້ໃຊ້</label>
+                <input id="registerUsername" type="text" placeholder="ຕົວຢ່າງ ( ທ້າວ/ນາງ ຄອນໄຊ)" required>
+
+                <!--<label for="registerlastname" class="sr-only">ນາມສະກຸນ</label> -->
+                <label for="registerlastname" class="sr-only">ນາມສະກຸນ</label>
+                <input id="registerlastname" type="text" placeholder="ຕົວຢ່າງ ( ໄຊຊະນະ )">
+
+                <!--<label for="registerpassword" class="sr-only">ລະຫັດຜ່ານ</label>-->
+                <label for="registerpassword" class="sr-only">ລະຫັດຜ່ານ</label>
+                <input id="registerpassword" type="password" placeholder="ລະຫັດຜ່ານ" required>
+
+                <!--<label for="registerage" class="sr-only">ເພດ</label>-->
+                <label for="registerage" class="sr-only">ເພດ</label>
+                <select id="registerage">
+                    <option value="ຊາຍ">ຊາຍ</option>
+                    <option value="ຍິງ">ຍິງ</option>
+                </select>
+
+                <!--<label for="registernumber" class="sr-only">ເບີໂທ</label>-->
+                <label for="registernumber" class="sr-only">ເບີໂທ</label>
+                <input id="registernumber" type="number" placeholder="ເບີໂທ" min="0" required>
+
+                <!--<label for="registeremail" class="sr-only">Email</label>-->
+                <label for="registeremail" class="sr-only">Email</label>
+                <input id="registeremail" type="email" placeholder="Email" required>
 
 
-
+                <button type="submit">ສະໝັກສະມາຊິກ</button>
+            </form>
+        </div>
+    </div>
 
     <script src="./style/js/Function-new.js"></script>
     <script src="./style/js/nav.js"></script>
     <script src="./style/js/style.js"></script>
     <script src="./style/js/sum.js"></script>
     <script src="./style/js/index.js"></script>
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
+    <script src="./style/js/login/login.js"></script>
 </body>
 
 </html>

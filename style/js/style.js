@@ -7,7 +7,8 @@ const cssFiles = [
     './style/css/contact-3.css',
     './style/css/contact-4.css',
     './style/css-DIR-2/DIR-1.css',
-    './style/DIR-error/DIR-error.css'
+    './style/DIR-error/DIR-error.css',
+    './style/css-login/login.css'
 ];
 
 cssFiles.forEach(href => {

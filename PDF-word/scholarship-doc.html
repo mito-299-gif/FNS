@@ -1,0 +1,32 @@
+<style>
+    .pdf-container {
+        width: 100%;
+        height: 80vh;
+        border: 1px solid #ccc;
+    }
+
+    .pdf-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+</style>
+<div class="container-2-from-1">
+    <select onchange="
+        if (this.value === 'ຫົວຂໍ້ນໍາໃຊ້') {
+            loadPage('PDF-word/scholarship-doc.html');
+        } else if (this.value === 'ຫົວຂໍ້ພື້ນຖານ') {
+            loadPage('PDF-word/scholarship-doc1.html');
+        } else if (this.value === 'ເລືອກລົງທະບຽນຫົວຂໍ້ຄົ້ນຄວ້າ') {
+            loadPage('../DIR-1/contact-1.html');
+        }
+    ">
+        <option>---ເລືອກລົງທະບຽນ---</option>
+        <option value="ເລືອກລົງທະບຽນຫົວຂໍ້ຄົ້ນຄວ້າ">ເລືອກລົງທະບຽນຫົວຂໍ້ຄົ້ນຄວ້າ</option>
+        <option value="ຫົວຂໍ້ນໍາໃຊ້">ຫົວຂໍ້ນໍາໃຊ້</option>
+        <option value="ຫົວຂໍ້ພື້ນຖານ">ຫົວຂໍ້ພື້ນຖານ</option>
+    </select>
+</div>
+<div class="pdf-container">
+    <iframe src="../PDF/1.pdf" title="Scholarship Application Document"></iframe>
+</div>
