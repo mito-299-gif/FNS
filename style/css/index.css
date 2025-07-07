@@ -279,6 +279,27 @@ a {
 }
 
 
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.navbar-brand img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+#usernameDisplay {
+    /* font-size: 16px; */
+    color: #333;
+    margin-left: 0;
+}
+
+
+
 
 @media (max-width: 850px) {
 
@@ -347,6 +368,16 @@ a {
     .navbar-nav .Login-Admin {
         margin-left: 0;
     }
+
+    /* #usernameDisplay {
+        position: absolute;
+        display: block;
+        top: -196px;
+        left: 112px;
+        z-index: 1;
+    } */
+
+
 }
 
 .modal .close {
