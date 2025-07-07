@@ -5,7 +5,7 @@ function loadPage(url) {
             document.querySelector("#main-content").innerHTML = data;
 
 
-            if (url.includes("contact-4.html")) {
+            if (url.includes("contact-1.html")) {
                 setTimeout(() => {
                     setupBudgetTable();
                 }, 0);
