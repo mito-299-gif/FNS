@@ -12,18 +12,21 @@
 
 <body>
     <nav class="navbar">
-        <a class="navbar-brand" onclick="loadPage('../DIR-1/contact-1.html'); return false;">
-            <img src="./style/img/logo.png" alt="Logo" class="navbar-logo">
-            <!-- <span>FNS</span> -->
-            <span id="usernameDisplay"></span>
-        </a>
         <button class="navbar-toggler" type="button" aria-label="Toggle navigation" aria-expanded="false"
             aria-controls="navbarNavContent">
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"
                 aria-hidden="true">
-                <path d="M21 6H3V5h18v1zm0 5H3v1h18v-1zm0 6H3v1h18v-1z"></path>
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
             </svg>
         </button>
+        <a class="navbar-brand" onclick="loadPage('../DIR-1/contact-1.html'); return false;">
+            <img src="./style/img/logo.png" alt="Logo" class="navbar-logo">
+            <!-- <span>FNS</span> -->
+            <!-- <span id="usernameDisplay"></span> -->
+        </a>
+
+
+
         <ul class="navbar-nav" id="navbarNavContent">
             <li class="nav-item">
                 <a class="nav-link" onclick="loadPage('../DIR-error/error.html'); return false;">
@@ -44,23 +47,30 @@
             <!-- ຊ່ອນ -->
             <li class="nav-item Login-Admin" id="loginNavItem">
                 <a class="nav-link">
-                    <button class="login-btn" id="loginNavButton">Login</button>
+                    <button class="login-btn" id="loginNavButton">
+                        <span>Login</span>
+                    </button>
                 </a>
+
             </li>
             <!-- LOGIN ສະແດງຂື້ນມາ -->
             <li class="nav-item Login-Admin" id="userNavItem">
                 <a class="nav-link user-profile-link">
                     <!-- <img src="./style/img/user-profile.png" alt="User" class="user-icon-nav"> -->
-
                     <button id="logoutButton" class="logout-btn">ອອກຈາກລະບົບ</button>
                 </a>
             </li>
         </ul>
-        <div class="navbar-icons">
+        <!-- <div class="navbar-icons">
             <img src="./style/img/heart.png" alt="" srcset="">
             <img src="./style/img/shopping-cart.png" alt="">
-        </div>
+        </div> -->
+        <!-- ...existing code... -->
+        <img src="./style/img/logo-login.png" alt="Login icon" class="login-btn-icon" id="loginNavIcon"
+            onclick="showLoginModal()">
+        <!-- ...existing code... -->
     </nav>
+
 
     <div id="main-content"></div>
 
@@ -70,14 +80,19 @@
     <!-- Modal Login -->
     <div id="loginModal" class="modal" role="dialog" aria-labelledby="loginModalTitle" aria-modal="true">
         <div class="modal-content">
-            <!-- The close button is controlled by JS. It's hidden when login is forced. -->
+            <img src="./style/img/logo.png" alt="Logo" class="navbar-logo">
             <button class="close" id="loginModalCloseButton" aria-label="Close">&times;</button>
             <h3 id="loginModalTitle">ເຂົ້າສູ່ລະບົບ</h3>
             <form id="loginForm">
                 <label for="loginUsername" class="sr-only">ຊື່ຜູ້ໃຊ້</label>
                 <input id="loginUsername" type="text" placeholder="ຊື່ຜູ້ໃຊ້, ອີເມວ, ຫຼື ເບີໂທ" required>
                 <label for="loginPassword" class="sr-only">ລະຫັດຜ່ານ</label>
-                <input id="loginPassword" type="password" placeholder="ລະຫັດຜ່ານ" required>
+                <div class="password-container">
+                    <input id="loginPassword" type="password" placeholder="ລະຫັດຜ່ານ" required>
+                    <span id="togglePassword" class="toggle-password" aria-label="Show or hide password">
+                    </span>
+                </div>
+
                 <button type="submit">ເຂົ້າສູ່ລະບົບ</button>
                 <!-- <p class="modal-separator"><span>ຫຼື</span></p> -->
                 <button type="button" class="register-btn" id="switchToRegister">ສະໝັກຊື່ຜູ້ໃຊ້</button>
@@ -88,35 +103,37 @@
     <!-- Modal Register -->
     <div id="registerModal" class="modal" role="dialog" aria-labelledby="registerModalTitle" aria-modal="true">
         <div class="modal-content">
+            <img src="./style/img/logo.png" alt="Logo" class="navbar-logo">
             <button class="close" aria-label="Close">&times;</button>
             <!-- <h3 id="registerModalTitle">ສະໝັກຊື່ຜູ້ໃຊ້</h3> -->
             <h3 id="registerModalTitle">ສະໝັກຊື່ຜູ້ໃຊ້</h3>
             <form id="registerForm">
                 <label for="registerUsername" class="sr-only">ຊື່ຜູ້ໃຊ້</label>
-                <input id="registerUsername" type="text" placeholder="ຕົວຢ່າງ ( ທ້າວ/ນາງ ຄອນໄຊ)" required>
+                <input id="registerUsername" type="text" placeholder="ຊື່ຜູ້ໃຊ້ ຕົວຢ່າງ ( ທ້າວ/ນາງ ຄອນໄຊ)" required>
 
-                <!--<label for="registerlastname" class="sr-only">ນາມສະກຸນ</label> -->
                 <label for="registerlastname" class="sr-only">ນາມສະກຸນ</label>
-                <input id="registerlastname" type="text" placeholder="ຕົວຢ່າງ ( ໄຊຊະນະ )">
+                <input id="registerlastname" type="text" placeholder="ນາມສະກຸນ ຕົວຢ່າງ ( ໄຊຊະນະ )">
 
-                <!--<label for="registerpassword" class="sr-only">ລະຫັດຜ່ານ</label>-->
-                <label for="registerpassword" class="sr-only">ລະຫັດຜ່ານ</label>
-                <input id="registerpassword" type="password" placeholder="ລະຫັດຜ່ານ" required>
 
-                <!--<label for="registerage" class="sr-only">ເພດ</label>-->
+                <label for="registernumber" class="sr-only">ເບີໂທ</label>
+                <input id="registernumber" type="number" placeholder="ເບີໂທ" min="0" required>
+
+                <label for="registeremail" class="sr-only">Email</label>
+                <input id="registeremail" type="email" placeholder="Email" required>
+
                 <label for="registerage" class="sr-only">ເພດ</label>
                 <select id="registerage">
                     <option value="ຊາຍ">ຊາຍ</option>
                     <option value="ຍິງ">ຍິງ</option>
                 </select>
 
-                <!--<label for="registernumber" class="sr-only">ເບີໂທ</label>-->
-                <label for="registernumber" class="sr-only">ເບີໂທ</label>
-                <input id="registernumber" type="number" placeholder="ເບີໂທ" min="0" required>
 
-                <!--<label for="registeremail" class="sr-only">Email</label>-->
-                <label for="registeremail" class="sr-only">Email</label>
-                <input id="registeremail" type="email" placeholder="Email" required>
+                <label for="registerPassword" class="sr-only">ລະຫັດຜ່ານ</label>
+                <div class="password-container">
+                    <input id="registerPassword" type="password" placeholder="ລະຫັດຜ່ານ" required>
+                    <span id="toggleRegisterPassword" class="toggle-password" aria-label="Show or hide password">
+                    </span>
+                </div>
 
 
                 <button type="submit">ສະໝັກສະມາຊິກ</button>
@@ -134,6 +151,9 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
     <script src="./style/js/login/login.js"></script>
+    <script>
+
+    </script>
 </body>
 
 </html>
