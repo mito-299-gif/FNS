@@ -1,0 +1,246 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Noto Sans Lao';
+    src: url('../font/NOTOSANSLAO-EXTRABOLD.TTF') format('truetype');
+
+}
+
+body {
+    font-family: 'Noto Sans Lao';
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.navbar {
+    border: #000000 1px solid;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 90px;
+    gap: 20px;
+    font-family: 'Noto Sans Lao';
+}
+
+.navbar-brand {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.navbar-logo {
+    display: inline-block;
+    margin-top: 2px;
+    height: 40px;
+    width: auto;
+}
+
+.navbar-toggler {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    padding: 0.25rem 0.75rem;
+    cursor: pointer;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+}
+
+.navbar-nav {
+    display: flex;
+    width: 100%;
+}
+
+.nav-item {
+    margin-left: 20px;
+}
+
+.nav-link {
+    color: #000000;
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background-color: #575757;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.nav-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.nav-link span {
+    font-size: 0.8rem;
+}
+
+.btn {
+    padding: 8px 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    line-height: 1.5;
+}
+
+.navbar .btn-login {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+    margin-left: 450px;
+}
+
+.navbar .btn-login:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.search-container {
+    width: auto;
+    display: flex;
+}
+
+.search-container input {
+    background-color: #f8f8f8;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+    transition: width 0.3s ease-in-out;
+
+}
+
+.search-container input:focus {
+    width: 300px;
+}
+
+.search-container svg {
+    width: 50px;
+    height: 20px;
+    fill: #333;
+    margin-left: -50px;
+    transform: translateX(-10px);
+    transform: translateX(-10px) translateY(5px);
+    cursor: pointer;
+}
+
+.search-container img {
+    width: 23px;
+    height: 20px;
+    fill: #ffffff;
+    margin-left: 11px;
+    transform: translateX(-10px) translateY(5px);
+    cursor: pointer;
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+}
+
+.logout-item {
+    margin-left: auto;
+}
+
+@media (max-width: 850px) {
+
+
+    .navbar-toggler {
+        display: block;
+        margin-left: auto;
+    }
+
+    .navbar-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        background-color: #ffffff;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .navbar .btn-login {
+        margin-left: 0;
+    }
+
+    .navbar-nav.active {
+        display: flex;
+    }
+
+    .nav-item {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .nav-link {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 15px;
+        padding: 12px 20px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+        color: #333;
+    }
+
+    .navbar-icons {
+        display: none;
+    }
+
+    .nav-item:last-child .nav-link {
+        border-bottom: none;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+        background-color: #f0f0f0;
+    }
+
+    details {
+        transform: translateX(0);
+
+        max-width: 100%;
+
+    }
+}

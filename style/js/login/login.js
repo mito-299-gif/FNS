@@ -44,6 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (usernameDisplay) usernameDisplay.textContent = user.username; // ສະແດງຊື່ຜູ້ໃຊ້
         if (loginOverlay) loginOverlay.style.display = 'none'; // ຊ່ອນ overlay ທີ່ບັງຄັບໃຫ້ລັອກອິນ
         if (loginModalCloseButton) loginModalCloseButton.style.display = 'block'; // ກວດສອບໃຫ້ແນ່ໃຈວ່າປຸ່ມປິດສະແດງຂຶ້ນມາ ເພື່ອໃຫ້ສາມາດເປີດ-ປິດໄດ້ອີກ
+
+        // Show main content and hide login prompt
+        document.getElementById('main-content').style.display = 'block';
+        document.getElementById('login-prompt').style.display = 'none';
     }
 
     // ສະແດງສະຖານະ "ຍັງບໍ່ໄດ້ລັອກອິນ"
@@ -53,23 +57,23 @@ document.addEventListener('DOMContentLoaded', () => {
         if (usernameDisplay) usernameDisplay.textContent = '';
     }
 
-
-
-
     // --- 3. ກວດສອບສະຖານະການລັອກອິນເມື່ອໜ້າໂຫຼດ ---
-    // ກວດສອບວ່າເຄີຍມີການລັອກອິນຄ້າງໄວ້ໃນ sessionStorage ຫຼືບໍ່
     const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
     if (loggedInUser) {
+        // If user is admin, redirect to admin page immediately
+        if (loggedInUser.username === 'admin') {
+            window.location.href = 'Admin/index.html';
+            return; // Stop further execution on this page
+        }
+
         showLoggedInState(loggedInUser);
-        // Load initial page content since user is already logged in
-        loadPage('../DIR-1/contact-1.html');
+        // Load initial page content for non-admin users
+        loadPage('user/DIR-1/contact-1.html');
     } else {
         showLoggedOutState();
-        // ໂຫຼດໜ້າເລີ່ມຕົ້ນເຖິງແມ່ນວ່າຈະຍັງບໍ່ໄດ້ລັອກອິນ
-        loadPage('../DIR-1/contact-1.html');
-        // if (loginOverlay) loginOverlay.style.display = 'block'; // ສະແດງ overlay ເພື່ອບັງຄັບໃຫ້ລັອກອິນ
-        // if (loginModalCloseButton) loginModalCloseButton.style.display = 'none'; // ຊ່ອນປຸ່ມປິດ ເມື່ອຖືກບັງຄັບໃຫ້ລັອກອິນ
-        // openModal(loginModal); // Force open login modal
+        // Hide main content and show login prompt
+        document.getElementById('main-content').style.display = 'none';
+        document.getElementById('login-prompt').style.display = 'block';
     }
 
     // --- 4. ຕົວຮັບຟັງເຫດການ (Event Listeners) ---
@@ -200,7 +204,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 (user.username === identifier || user.email === identifier || user.phone === identifier) && user.password === password
             );
 
-            if (foundUser) {
+            if (identifier === 'admin' && password === 'Admin') {
+                const adminUser = { username: 'admin' };
+                sessionStorage.setItem('loggedInUser', JSON.stringify(adminUser));
+                showLoggedInState(adminUser);
+                Swal.fire({
+                    icon: 'success',
+                    title: `Welcome, Admin!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then(() => {
+                    window.location.href = 'Admin/index.html';
+                });
+                closeModal(loginModal);
+                loginForm.reset();
+            } else if (identifier === 'user' && password === 'user') {
+                const regularUser = { username: 'user' };
+                sessionStorage.setItem('loggedInUser', JSON.stringify(regularUser));
+                showLoggedInState(regularUser);
+                Swal.fire({
+                    icon: 'success',
+                    title: `Welcome, user!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                closeModal(loginModal);
+                loginForm.reset();
+                loadPage('user/DIR-1/contact-1.html');
+            } else if (foundUser) {
                 // ເກັບຂໍ້ມູນຜູ້ໃຊ້ໄວ້ໃນ sessionStorage
                 sessionStorage.setItem('loggedInUser', JSON.stringify(foundUser));
                 // ອັບເດດໜ້າຕາເວັບ (UI)
@@ -214,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeModal(loginModal);
                 loginForm.reset();
                 // ໂຫຼດເນື້ອຫາເລີ່ມຕົ້ນຫຼັງຈາກລັອກອິນສຳເລັດ
-                loadPage('../DIR-1/contact-1.html');
+                loadPage('user/DIR-1/contact-1.html');
             } else {
                 Swal.fire({
                     icon: 'error',
@@ -250,29 +281,6 @@ function showLoginModal() {
     modal.style.justifyContent = 'center';
     modal.style.alignItems = 'center';
 }
-
-// document.getElementById('toggleLoginPassword').addEventListener('click', function () {
-//     const pwd = document.getElementById('loginPassword');
-//     if (pwd.type === 'password') {
-//         pwd.type = 'text';
-//         this.textContent = '🙈';
-//     } else {
-//         pwd.type = 'password';
-//         this.textContent = '👁️';
-//     }
-// });
-
-// const passwordInput = document.getElementById('loginPassword');
-// const showPasswordCheckbox = document.getElementById('showPassword');
-
-// showPasswordCheckbox.addEventListener('change', () => {
-//     if (showPasswordCheckbox.checked) {
-//         passwordInput.type = 'text';
-//     } else {
-//         passwordInput.type = 'password';
-//     }
-// });
-
 
 document.addEventListener('DOMContentLoaded', function () {
     const togglePassword = document.querySelector('#togglePassword');

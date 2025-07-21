@@ -1,0 +1,362 @@
+<!-- <div class="container-1">
+    <div href="#contact-1" class="clickable" onclick="loadPage('../DIR-1/contact-1.html'); return false;">ຂໍ້ I</div>
+    <div href="#contact-2" class="clickable" onclick="loadPage('../DIR-1/contact-2.html'); return false;">ຂໍ້ II. 1-5
+    </div>
+    <div href="#contact-3" class="clickable" onclick="loadPage('../DIR-1/contact-3.html'); return false;">ຂໍ້ III.</div>
+    <div href="#contact-4" class="clickable" onclick="loadPage('../DIR-1/contact-4.html'); return false;">ຂໍ້ IV-V</div>
+</div> -->
+<div class="container-2-from-1">
+    <select onchange="
+        if (this.value === 'ຫົວຂໍ້ນໍາໃຊ້') {
+            loadPage('user/PDF-word/scholarship-doc.html');
+        } else if (this.value === 'ຫົວຂໍ້ພື້ນຖານ') {
+            loadPage('user/PDF-word/scholarship-doc1.html');
+        } else if (this.value === 'ເລືອກລົງທະບຽນຫົວຂໍ້ຄົ້ນຄວ້າ') {
+            loadPage('user/DIR-1/contact-1.html');
+        }
+    ">
+        <option>---ເລືອກລົງທະບຽນ---</option>
+        <option value="ເລືອກລົງທະບຽນຫົວຂໍ້ຄົ້ນຄວ້າ">ເລືອກລົງທະບຽນຫົວຂໍ້ຄົ້ນຄວ້າ</option>
+        <option value="ຫົວຂໍ້ນໍາໃຊ້">ຫົວຂໍ້ນໍາໃຊ້</option>
+        <option value="ຫົວຂໍ້ພື້ນຖານ">ຫົວຂໍ້ພື້ນຖານ</option>
+    </select>
+</div>
+
+<div class="container-from" id=" main-contact-1">
+    <div>
+        <p><b>I. ຂໍ້ມູນລວມ:</p>
+    </div>
+
+    <div class="container-from-1">
+        <label for="research-title">ຊື່ ຫົວຂໍ້ຄົ້ນຄວ້າ:</label>
+        <input type="text">
+    </div>
+
+    <div class="container-from-2">
+        <label for="research-title">ໄລຍະຈັດຕັ້ງປະຕິບັດ (ຈຳນວນເດືອນ):</label>
+        <input type="number" min="1" max="12">
+
+        <label class="label-color" for="research-title">ແຕ່ເດືອນ / ປີ:</label>
+        <input type="date">
+
+        <label class="label-color" for="research-title">ຫາ ເດືອນ / ປີ:</label>
+        <input type="date">
+    </div>
+
+    <div class="container-from-3">
+        <label>ຂົງເຂດ</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" value="ວິທະຍາສາດທຳມະຊາດ ແລະ ເຕັກນິກ"> ວິທະຍາສາດທຳມະຊາດ ແລະ ເຕັກນິກ</label>
+            <label><input type="checkbox">ວິທະຍາສາດສັງຄົມ ແລະ ມະນູດສາດ</label>
+        </div>
+    </div>
+
+    <div class="container-from-4">
+        <label for="science-field">ຂົງເຂດວິທະຍາສາດ</label>
+        <select id="science-field" name="science-field">
+            <option value="">-- ເລືອກຂົງເຂດ --</option>
+            <option value="ຄະນິດສາດ">ຄະນິດສາດ</option>
+            <option value="ຟີຊິກສ໌">ຟີຊິກສ໌</option>
+            <option value="ເຄມີ">ເຄມີ</option>
+            <option value="ຊີວະວິທະຍາ">ຊີວະວິທະຍາ</option>
+            <option value="ວິສະວະກຳ">ວິສະວະກຳ</option>
+            <option value="ສາຂາອື່ນໆ">ສາຂາອື່ນໆ</option>
+        </select>
+        <label>ລະຫັດປະເພດ</label>
+        <input type="text">
+    </div>
+    <div class="container-from-5">
+
+        <div class="checkbox-group">
+            <label><input type="checkbox" value="ຫົວຂໍ້ໃຫມ່"> ຫົວຂໍ້ໃຫມ່</label>
+            <label><input type="checkbox" value="ຫົວຂໍ້ສືບຕໍ່"> ຫົວຂໍ້ສືບຕໍ່</label>
+        </div>
+
+        <div class="checkbox-group-1">
+            <label><input type="checkbox" value="ຄົ້ນຄວ້າທາງທິດສະດີ"> ຄົ້ນຄວ້າທາງທິດສະດີ</label>
+            <label><input type="checkbox" value="ຄົ້ນຄວ້າທົດລອງ"> ຄົ້ນຄວ້າທົດລອງ</label>
+        </div>
+    </div>
+
+    <div class="container-from-6">
+        <label for="research-title">ຊື່ ຫົວຂໍ້ຄົ້ນຄວ້າ:</label>
+        <input type="text">
+        <button>Browse</button>
+    </div>
+
+    <div class="container-from-7">
+        <div class="form-row">
+            <label for="leader-name">ຊື່ ຂອງຫົວໜ້າທີ່ຄົ້ນຄວ້າ</label>
+            <input type="text" id="leader-name">
+        </div>
+        <div class="form-row">
+            <label for="project-count">ຈຳນວນຫົົວຂໍ້ທີ່ຕົນເປັນຫົວໜ້າຄົ້ນຄວ້າທີ່ກອງທືນໃຫ້ສະນັບສະໜຸນ:</label>
+            <input type="text" id="project-count">
+        </div>
+        <div class="form-row">
+            <label for="other-fund">ຊື່ແຫຼ່ງທືນອື່ນທີ່ນຳສະເໜີນຳໃຊ້ເພື່ອຄົ້ນຄວ້າ (ຖ້າມີ , ລະບຸຊື່)</label>
+            <input type="text" id="other-fund">
+        </div>
+    </div>
+
+    <div class="container-2">
+        <h2>III. ຫົວຂໍ້ຄົ້ນຄວ້າ ແລະ ການຈັດຕັ້ງຮັບພິສອບ</h2>
+        <label>1. ຫົວໜ້າ ຫົວຂໍ້ຄົ້ນຄວ້າ:</label>
+
+        <div class="container-2-from-1">
+            <label>ຊື່ ແລະ ນາມສະກຸນ</label>
+            <input type="text">
+            <label>ອຸດທິ</label>
+            <select>
+                <option value="ປຕ">ປຕ</option>
+                <option value="ຫົວຂໍ້ນໍາໃຊ້">ຫົວຂໍ້ນໍາໃຊ້</option>
+                <option value="ປອ">ປອ</option>
+            </select>
+            <label>ວັນເດືອນປີເກິດ</label>
+            <input type="date">
+        </div>
+
+        <div class="container-2-from-2">
+            <label class="label-1">ເລກປະຈຳໂຕ</label>
+            <input type="number">
+            <label>ເບີໂທ</label>
+            <input type="number">
+            <label>Emali</label>
+            <input type="email">
+        </div>
+        <div class="container-2-from-3">
+            <label class="label-1">ສະຖານທີ່ບ່ອນເຮັດວຽກ</label>
+            <input type="text">
+        </div>
+        <div class="container-2-from-1">
+            <label class="label-text-from4">ທີ່ຕັ່ງສະຖານທີ່ບ່ອນເຮັດວຽກ:</label>
+            <label>ແຂວງ / ນະຄອນ</label>
+            <select>
+                <option value="">ນະຄອນຫຼວງ</option>
+            </select>
+            <label>ເມືອງ</label>
+            <select>
+                <option value="">ໄຊທານີ້</option>
+            </select>
+            <label>ບ້ານ</label>
+            <input type="text">
+        </div>
+        <div class="container-2-from-4">
+            <label class="label-text-from4-4">2. ການຈັດຕັ້ງຮັບພິຊອບ:</label>
+            <label>ຊື່ການຕັ້ງຮັບພິຊອບ:</label>
+            <input type="text">
+        </div>
+        <div class="container-2-from-1">
+            <label class="label-text-from5">ຜູ້ຕາງໜ້າ</label>
+            <input type="text">
+            <label class="label-text-from5-5">ຕຳແໜ່ງ</label>
+            <input type="text">
+        </div>
+        <div class="container-2-from-3">
+            <label class="label-text-from6">ທີ່ຕັ້ງ</label>
+            <input type="text">
+        </div>
+        <div class="container-2-from-4">
+            <label class="label-text-from4-4-4">3. ການຈັດຕັ້ງທີ່ສົມທົບຄົ້ນຄວ້າ:</label>
+            <input type="text">
+        </div>
+        <div class="container-2-from-4">
+            <label class="label-text-from4-4">4. ພື້ນຖານວັດຖຸ, ອຸປະກອນ ຮັບໃຫ້ແກ່ຫົວຂໍ້:</label>
+            <input type="text">
+        </div>
+        <div class="container-2-from-table">
+            <label>5. ລາຍຊື່ຜູ້ຮ່ວມວິຈັຍທີ່ຂໍເບີກວັດຖຸ:</label>
+            <div class="example">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ລຳດັບ</th>
+                            <th>ອຸດທິ</th>
+                            <th>ຊື່ ແລະ ນາມສະກຸນ</th>
+                            <th>ບ່ອນເຮັດວຽກ</th>
+                            <th>ຕຳແໜ່ງ</th>
+                            <th>ຈຳນວນມື້ເຂົ້າຮ່ວມເຮັດການຄົ້ນຄວ້າ</th>
+                            <th>ລະຫັດ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>ປທ</td>
+                            <td>MSc. vannhasin Phoneyphath</td>
+                            <td></td>
+                            <td>150</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>ປອ</td>
+                            <td>vongpasith chantakhoun</td>
+                            <td></td>
+                            <td>30</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>ປທ</td>
+                            <td>khamkeo naoeyng</td>
+                            <td></td>
+                            <td>50</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>ປທ</td>
+                            <td>MSc. vicarn vilaysack</td>
+                            <td></td>
+                            <td>100</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>ປຕ</td>
+                            <td>Duahgchai Xaysana</td>
+                            <td>frontend</td>
+                            <td>100</td>
+                            <td></td>
+                            <td>ຜູ້ຊ່ວຍ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="container-3">
+    <h1>III. ເນື້ອໃນຄົ້ນຄວ້າ</h1>
+    <p>1. ບົດຄັດຫຍໍ້ຂອງສະເໜີ</p>
+    <p>ນຳສະເໜີໂດຍຫຍໍ້ ບໍ່ກາຍ 300 ຄຳ ກ່ຽວກັບຫົວຂໍ້ (ບັນຫາ, ຈຸດປະສົງ, ເນື້ອໃນ, ວີທີການຄົ້ນຄວ້າ)</p>
+
+    <div class="textarea">
+        <textarea readonly>
+ການສຶກສາທົດລອງໃນຄັ້ງນີ້ເພື່ອຈະໄດ້ຄົ້ນຄວ້າກ່ຽວກັບຜົນຂອງສານຄວບຄຸມການງອກເບື້ອງຫຼັງ ຕໍ່ການງອກຂອງເຂົ້າເຫຼືອງ...
+ທົດລອງໃນຄັ້ງນີ້ມີ 3 ການຈັດການ (3 treatments) ແລະ ມີ 3 ຄັ້ງ (3 replications) ດໍາເນີນການໃນຮູບແບບ RCBD (Randomized Complete Block Design) ຄື:                
+✓ໃຊ້ນໍ້າເປົ້າລະລຶ່ນນໍ້າ (PG 523) 80% + ນໍ້າອອນ 40%
+✓ ໃຊ້ນໍ້າທົດແທນ
+✓                    
+</textarea>
+    </div>
+    <h3>2. ຜົນການຄົ້ນຄວ້າທາງດ້ານວີທາຍາສາດທີ່ເປັນທ່າແຮງຕໍ່ຂົງເຂດການຄົ້ນຄວ້ ແລະ ການພັດທະນາເສດທະກິດ-ສັງຄົມ(ບໍ່ກາຍ 300-500
+        ຄຳສັບ).</h1>
+        <div class="textarea">
+            <textarea readonly>
+        ການສຶກສາທົດລອງໃນຄັ້ງນີ້ເພື່ອຈະໄດ້ຄົ້ນຄວ້າກ່ຽວກັບຜົນຂອງສານຄວບຄຸມການງອກເບື້ອງຫຼັງ ຕໍ່ການງອກຂອງເຂົ້າເຫຼືອງ...
+        ທົດລອງໃນຄັ້ງນີ້ມີ 3 ການຈັດການ (3 treatments) ແລະ ມີ 3 ຄັ້ງ (3 replications) ດໍາເນີນການໃນຮູບແບບ RCBD (Randomized Complete Block Design) ຄື:                
+        ✓ໃຊ້ນໍ້າເປົ້າລະລຶ່ນນໍ້າ (PG 523) 80% + ນໍ້າອອນ 40%
+        ✓ ໃຊ້ນໍ້າທົດແທນ
+        ✓                    
+        </textarea>
+        </div>
+        <h3>3. ຄາດຄະແນ່ຜົນທີ່ໄດ້ຮັບ</h3>
+        <div class="example">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ລຳດັບ</th>
+                        <th>ຊື່ບົດຄວາມ</th>
+                        <th>ຊື່ວາສະສົມ</th>
+                        <th>ຈຳນວນ</th>
+                        <th>ອື່ນໆ</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr>
+                        <td>1</td>
+                        <td><input type="text" placeholder=""></td>
+                        <td><input type="text" placeholder=""></td>
+                        <td><input type="number" min="1" value=""></td>
+                        <td><input type="text" placeholder=""></td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td><input type="text" placeholder=""></td>
+                        <td><input type="text" placeholder=""></td>
+                        <td><input type="number" min="1" value=""></td>
+                        <td><input type="text" placeholder=""></td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td><input type="text" placeholder=""></td>
+                        <td><input type="text" placeholder=""></td>
+                        <td><input type="number" min="1" value=""></td>
+                        <td><input type="text" placeholder=""></td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td><input type="text" placeholder=""></td>
+                        <td><input type="text" placeholder=""></td>
+                        <td><input type="number" min="1" value=""></td>
+                        <td><input type="text" placeholder=""></td>
+                </tbody>
+            </table>
+        </div>
+        <p>* ນອກໃນບັນຊີວະລະສານ ທີ່ກອງທືນພັດທະນາວິທະຍາສາດ ແລະ ເຕັກໂລຊີວາງອອກ</p>
+
+</div>
+</div>
+
+<div class="container-4-4">
+    <h1>IV. ງົບປະມານຫົວຂໍ້ຄົ້ນຄວ້າ</h1>
+
+    <div class="form-group">
+        <label>1. ລວມຄ່າໃຊ້ຈ່າຍ:</label>
+        <input type="text">
+    </div>
+
+    <div class="form-group">
+        <label>2. ຄວາມຕ້ອງການໃຫ້ກອງທືນໃຫ້ການສະໜັບສະໜຸນ:</label>
+        <input type="text">
+    </div>
+
+    <h3>3. ຄາດຄະແນ່ງົບປະມານ (ໂດຍຫຍໍ້)</h3>
+    <div class="example">
+        <table>
+            <thead>
+                <tr>
+                    <th>ລຳດັບ</th>
+                    <th>ຂໍ້ລາຍຈ່າຍ</th>
+                    <th>ຈຳນວນງົບ (ກີບ)</th>
+                </tr>
+            </thead>
+            <tbody id="budget-table-body">
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">ລວມ</td>
+                    <td id="total">0</td>
+                </tr>
+            </tfoot>
+        </table><br>
+    </div>
+    <h1>V. ລະຫັດຢືນຢັນຄວາມຖືກຕ້ອງຮ່າງບົດສະເໜີຫົວຂໍ້ຄົ້ນຄວ້າ</h1>
+
+    <label>ລະບົບຈະຕື່ມຂໍ້ມູນເອງ ເພື່ອເຮັດໃຫ້ຂະບວນການບໍລິຫານງ່າຍຂຶ້ນ (ຖ້າມີ)</label>
+
+    <div class="form-group">
+        <label>ລະຫັດຢືນຢັນຄວາມຖືກຕ້ອງບົດສະເໝີພາບທີ 1 (ພາສາລາວ):</label>
+        <input type="text">
+    </div>
+
+    <div class="form-group">
+        <label>ລະຫັດຢືນຢັນຄວາມຖືກຕ້ອງບົດສະເໝີພາບທີ 2 (ພາສາລາວ):</label>
+        <input type="text">
+    </div>
+
+</div>
+
+<script src="../style/js/Function-new.js"></script>

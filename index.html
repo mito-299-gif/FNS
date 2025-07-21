@@ -19,7 +19,7 @@
                 <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
             </svg>
         </button>
-        <a class="navbar-brand" onclick="loadPage('../DIR-1/contact-1.html'); return false;">
+        <a class="navbar-brand" onclick="loadPage('../user/DIR-1/contact-1.html'); return false;">
             <img src="./style/img/logo.png" alt="Logo" class="navbar-logo">
             <!-- <span>FNS</span> -->
             <!-- <span id="usernameDisplay"></span> -->
@@ -72,7 +72,13 @@
     </nav>
 
 
-    <div id="main-content"></div>
+    <div id="main-content" style="display: none;"></div>
+
+    <!-- Login Prompt -->
+    <div id="login-prompt" style="text-align: center; padding: 50px;">
+        <h1>ກະລຸນາເຂົ້າສູ່ລະບົບເພື່ອດຳເນີນການຕໍ່</h1>
+        <p>ທ່ານຈຳເປັນຕ້ອງເຂົ້າສູ່ລະບົບເພື່ອເຂົ້າເຖິງໜ້ານີ້.</p>
+    </div>
 
     <!-- Overlay to force login -->
     <div id="login-overlay"></div>

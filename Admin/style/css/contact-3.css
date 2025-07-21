@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'Noto Sans Lao';
+    src: url('../font/NOTOSANSLAO-EXTRABOLD.TTF') format('truetype');
+
+}
+
+.container-3 {
+    font-family: 'Noto Sans Lao';
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.textarea textarea {
+    width: 800px;
+    height: 200px;
+    font-family: 'Noto Sans Lao';
+    font-size: 16px;
+    white-space: pre-wrap;
+    padding: 10px;
+}
+
+.container-3 h3 {
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.5;
+}
+
+.example {
+    width: 100%;
+    height: 300px;
+    overflow-x: auto;
+}
+
+.example table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    font-family: 'Noto Sans Lao', Arial, sans-serif;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.example th,
+.example td {
+    border: 1px solid #bdbdbd;
+    padding: 0.5rem 0.7rem;
+    text-align: left;
+    min-width: 120px;
+    background: #fff;
+}
+
+.example th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #333;
+}
+
+.example th:first-child,
+.example td:first-child {
+    text-align: center;
+    width: 60px;
+}
+
+
+.example input[type="text"],
+.example input[type="number"] {
+    width: 100%;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid #ffffff;
+    border-radius: 0;
+    font-size: 1rem;
+    background: transparent;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.example input[type="text"]:focus,
+.example input[type="number"]:focus {
+    border-color: #4d90fe;
+    outline: none;
+    background: #e3eefa;
+}
+
+@media (max-width: 992px) {
+    .container-3 {
+        padding: 1rem;
+    }
+
+    .textarea textarea {
+        width: 100%;
+        height: 150px;
+    }
+
+    .example th,
+    .example td {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.5rem;
+        min-width: 100px;
+    }
+
+    .example input[type="text"],
+    .example input[type="number"] {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.5rem;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .example {
+        overflow-x: auto;
+    }
+
+    .example table {
+        min-width: 600px;
+        display: block;
+    }
+}

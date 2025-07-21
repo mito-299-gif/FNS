@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concept Note Registration</title>
+    <link rel="stylesheet" href="../style/css/concept_note.css">
+</head>
+<body>
+    <div class="concept-note-container">
+        <h2>Concept Note Registration</h2>
+        <form action="#" method="POST">
+            <div class="input-group">
+                <label for="topic-type">Select Topic Type:</label>
+                <select id="topic-type" name="topic-type" required>
+                    <option value="">-- Please select --</option>
+                    <option value="practical">หัวข้อที่นำไปใช้ได้จริง</option>
+                    <option value="basic">หัวข้อพื้นฐาน</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="topic-title">Topic Title:</label>
+                <input type="text" id="topic-title" name="topic-title" required>
+            </div>
+
+            <div class="input-group">
+                <label for="abstract">Abstract:</label>
+                <textarea id="abstract" name="abstract" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-button">Submit Concept Note</button>
+        </form>
+    </div>
+</body>
+</html>
