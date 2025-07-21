@@ -44,6 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (usernameDisplay) usernameDisplay.textContent = user.username; // ສະແດງຊື່ຜູ້ໃຊ້
         if (loginOverlay) loginOverlay.style.display = 'none'; // ຊ່ອນ overlay ທີ່ບັງຄັບໃຫ້ລັອກອິນ
         if (loginModalCloseButton) loginModalCloseButton.style.display = 'block'; // ກວດສອບໃຫ້ແນ່ໃຈວ່າປຸ່ມປິດສະແດງຂຶ້ນມາ ເພື່ອໃຫ້ສາມາດເປີດ-ປິດໄດ້ອີກ
+        const loginNavIcon = document.getElementById('loginNavIcon');
+        if (loginNavIcon) loginNavIcon.style.display = 'none';
 
         // Show main content and hide login prompt
         document.getElementById('main-content').style.display = 'block';
@@ -55,6 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (loginNavItem) loginNavItem.style.display = 'flex'; // ສະແດງປຸ່ມ "Login"
         if (userNavItem) userNavItem.style.display = 'none'; // ຊ່ອນຊື່ຜູ້ໃຊ້
         if (usernameDisplay) usernameDisplay.textContent = '';
+        const loginNavIcon = document.getElementById('loginNavIcon');
+        if (loginNavIcon) loginNavIcon.style.display = 'block';
     }
 
     // --- 3. ກວດສອບສະຖານະການລັອກອິນເມື່ອໜ້າໂຫຼດ ---
