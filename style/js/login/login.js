@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. Define all variables and elements ---
+    // --- 1. ກຳນົດຕົວແປ ແລະ ອົງປະກອບທັງໝົດ ---
     const loginModal = document.getElementById("loginModal");
     const registerModal = document.getElementById("registerModal");
     const loginOverlay = document.getElementById('login-overlay');
@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginModalCloseButton = document.getElementById('loginModalCloseButton');
     const loginNavIcon = document.getElementById('loginNavIcon');
 
-    // Password toggle elements
+    // ອົງປະກອບສຳລັບການສະຫຼັບການສະແດງລະຫັດຜ່ານ
     const togglePassword = document.querySelector('#togglePassword');
     const passwordInput = document.querySelector('#loginPassword');
     const toggleRegisterPassword = document.querySelector('#toggleRegisterPassword');
-    const registerPasswordInput = document.querySelector('#registerpassword'); // Corrected ID
+    const registerPasswordInput = document.querySelector('#registerpassword'); // ID ທີ່ຖືກຕ້ອງ
 
-    // --- 2. UI Control Functions ---
+    // --- 2. ຟังก์ชันຄວບຄຸມ UI ---
     const openModal = (modal) => {
         if (modal) modal.style.display = "flex";
     };
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (loginNavIcon) loginNavIcon.style.display = 'block';
     }
 
-    // --- 3. Initial Login State Check ---
+    // --- 3. ກວດສອບສະຖານະການລັອກອິນເບື້ອງຕົ້ນ ---
     const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
     if (loggedInUser) {
         if (loggedInUser.username === 'admin') {
@@ -63,14 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('login-prompt').style.display = 'block';
     }
 
-    // --- 4. Event Listeners ---
+    // --- 4. ຕົວຮັບຟັງເຫດການ (Event Listeners) ---
 
-    // Open login modal
+    // ເປີດໜ້າຕ່າງລັອກອິນ
     if (loginNavButton) {
         loginNavButton.addEventListener("click", () => openModal(loginModal));
     }
 
-    // Switch to register modal
+    // ສະຫຼັບໄປໜ້າຕ່າງລົງທະບຽນ
     if (switchToRegisterButton) {
         switchToRegisterButton.addEventListener("click", () => {
             closeModal(loginModal);
@@ -78,13 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // All close buttons
+    // ປຸ່ມປິດທັງໝົດ
     closeButtons.forEach(button => {
         button.addEventListener("click", () => {
             const modal = button.closest('.modal');
             if (modal) {
                 closeModal(modal);
-                // If closing register, reopen login
+                // ຖ້າປິດໜ້າຕ່າງລົງທະບຽນ, ໃຫ້ເປີດໜ້າຕ່າງລັອກອິນຄືນ
                 if (modal.id === 'registerModal') {
                     openModal(loginModal);
                 }
@@ -92,9 +92,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 5. Form Submission Logic ---
+    // --- 5. ໂລຈິກການສົ່ງຟອມ ---
 
-    // Register form
+    // ຟອມລົງທະບຽນ
     if (registerForm) {
         registerForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Login form
+    // ຟອມລັອກອິນ
     if (loginForm) {
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -136,6 +136,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 sessionStorage.setItem('loggedInUser', JSON.stringify(adminUser));
                 Swal.fire({ icon: 'success', title: 'Welcome, Admin!', showConfirmButton: false, timer: 1500 })
                     .then(() => { window.location.href = 'Admin/index.html'; });
+            } else if (identifier === 'user' && password === 'user') {
+                const regularUser = { username: 'user' };
+                sessionStorage.setItem('loggedInUser', JSON.stringify(regularUser));
+                showLoggedInState(regularUser);
+                Swal.fire({ icon: 'success', title: 'Welcome, user!', showConfirmButton: false, timer: 1500 });
+                closeModal(loginModal);
+                loginForm.reset();
+                loadPage('user/DIR-1/contact-1.html');
             } else if (foundUser) {
                 sessionStorage.setItem('loggedInUser', JSON.stringify(foundUser));
                 showLoggedInState(foundUser);
@@ -149,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Logout button
+    // ປຸ່ມອອກຈາກລະບົບ
     if (logoutButton) {
         logoutButton.addEventListener('click', () => {
             sessionStorage.removeItem('loggedInUser');
@@ -158,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 6. Password Toggle Logic ---
+    // --- 6. ໂລຈິກການສະຫຼັບການສະແດງລະຫັດຜ່ານ ---
     const eyeIcon = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>`;
     const eyeSlashIcon = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 6.5c2.76 0 5 2.24 5 5 0 .51-.08.99-.22 1.44l1.82 1.82c.97-.67 1.8-1.55 2.4-2.56C19.27 9.11 15.99 6.5 12 6.5zm-1.09 7.72L12 14.14c.83 0 1.5-.67 1.5-1.5 0-.09-.01-.18-.03-.26l-1.11-1.11c-.08-.02-.17-.03-.26-.03-.83 0-1.5.67-1.5 1.5 0 .42.17.8.44 1.09zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l1.6 1.6L19.73 22 22 19.73 4.27 2 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/></svg>`;
 
